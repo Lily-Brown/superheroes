@@ -1,0 +1,16 @@
+<div>
+  <%= form_for [@team, @superhero] do |f| %>
+    <p>Name</p>
+    <p><%= f.text_field :name %></p>
+    <p>True Identity</p>
+    <p><%= f.text_field :true_identity %></p>
+    <p><%= f.submit 'SAVE' %></p>
+  <% end %>
+
+  <%#= form_for(@team, :url=>{:action=>'get'}, :html => {:multipart => true}) do |f| %>
+   <%#= f.fields_for Superhero.new do |s| %>
+     <%#=s.text_field :name %>
+     <%#=s.text_field :name %>
+    <%# end %>
+  <%# end %>
+</div>

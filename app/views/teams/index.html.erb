@@ -1,0 +1,10 @@
+<div>
+  <% @teams.each do |team| %>
+  <p><h2><%= link_to team.name, team_path(team) %></h2></p>
+  <p><strong>Publisher</strong>: <%= team.publisher %></p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Add New Team', new_team_path %>
+</div>

@@ -1,0 +1,9 @@
+<div>
+  <%= form_for @team do |f| %>
+    <p>Name</p>
+    <p><%= f.text_field :name %></p>
+    <p>Publisher</p>
+    <p><%= f.text_field :publisher %></p>
+    <p><%= f.submit 'SAVE' %></p>
+  <% end %>
+</div>

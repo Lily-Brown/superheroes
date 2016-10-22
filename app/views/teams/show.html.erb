@@ -1,0 +1,7 @@
+<div>
+  <p><h2><%= @team.name %></h2></p>
+  <p><strong>Publisher</strong>: <%= @team.publisher %></p>
+  <p><%= link_to 'Add New Superhero', new_team_superhero_path(@team) %></p>
+  <%= button_to 'EDIT', edit_team_path, method: :get %>
+  <%= button_to 'DELETE', team_path(@team), method: :delete, data: {confirm: "Are you sure you want to delete this Library?"} %>
+</div>
