@@ -1,5 +1,5 @@
 <div>
-  <%= form_for [@team, @superhero] do |f| %>
+  <%= form_for @superhero, :as => :superhero, :url => team_superhero_path(@team,@superhero) do |f| %>
     <p>Name</p>
     <p><%= f.text_field :name %></p>
     <p>True Identity</p>

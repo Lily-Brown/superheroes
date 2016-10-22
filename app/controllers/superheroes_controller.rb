@@ -1,17 +1,17 @@
 class SuperheroesController < ApplicationController
+  before_action :get_team
+  before_action :get_superhero, only: [:show, :edit, :update, :destroy]
 
   def index
-    @superheroes = Superhero.all
+    @superheroes = @team.superheroes
   end
 
   def new
-    @team = Team.find_by_id(params[:team_id])
-    @superhero = @team.superheroes.build
+    @superhero = @team.superheroes.create(team_id: params[:team_id])
   end
 
   def create
-    @team = Team.find_by_id(params[:team_id])
-    @superhero = @team.superheroes.create(superhero_params)
+    @superhero = @team.superheroes.update(superhero_params)
     if @superhero.save
       flash[:success] = 'Superhero Created'
       redirect_to @superhero
@@ -22,23 +22,38 @@ class SuperheroesController < ApplicationController
   end
 
   def show
-    @team = Team.find_by_id(params[:team_id])
-    @superhero = Superhero.find_by_id(params[:id])  
   end
 
-  def edit
+  def edit 
   end
 
   def update
+    if @superhero.update(superhero_params)
+      flash[:success] = 'Superhero Updated'
+      redirect_to team_superhero_path
+    else
+      flash[:error] = @superhero.errors.full_messages.join(' ')
+      render :edit
+    end
   end
 
   def destroy
+    @superhero.destroy
+    redirect_to team_path(@team) 
   end
 
   private
 
   def superhero_params
     params.require(:superhero).permit(:name,:true_identity)
+  end
+
+  def get_team
+    @team = Team.find_by_id(params[:team_id])
+  end
+
+  def get_superhero
+    @superhero = Superhero.find_by_id(params[:id]) 
   end
 
 end

@@ -1,0 +1,10 @@
+<div>
+  <% @superheroes.each do |superhero| %>
+  <p><h2><%= link_to superhero.name, team_superhero_path(@team,superhero) %></h2></p>
+  <p><strong>True Identity</strong>: <%= superhero.true_identity %></p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Add New Superhero', new_team_superhero_path %>
+</div>

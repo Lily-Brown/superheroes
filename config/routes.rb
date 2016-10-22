@@ -7,6 +7,4 @@ Rails.application.routes.draw do
     resources :superheroes
   end
 
-  get '/teams/:team_id/superheroes/:id', to: 'superheroes#show', as: 'team_superheros'
-
 end

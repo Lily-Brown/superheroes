@@ -1,0 +1,9 @@
+<div>
+  <%= form_for @superhero, :as => :superhero, :url => team_superhero_path do |f| %>
+    <p>Name</p>
+    <p><%= f.text_field :name %></p>
+    <p>True Identity</p>
+    <p><%= f.text_field :true_identity %></p>
+    <p><%= f.submit 'SAVE' %></p>
+  <% end %>
+</div>
