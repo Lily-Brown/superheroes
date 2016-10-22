@@ -1,7 +1,8 @@
 <div>
   <% @superheroes.each do |superhero| %>
-  <p><h2><%= link_to superhero.name, team_superhero_path(@team,superhero) %></h2></p>
-  <p><strong>True Identity</strong>: <%= superhero.true_identity %></p>
+    <p><%= image_tag(superhero.image_url) %></p>
+    <p><h2><%= link_to superhero.name, team_superhero_path(@team,superhero) %></h2></p>
+    <p><strong>True Identity</strong>: <%= superhero.true_identity %></p>
   <% end %>
 </div>
 

@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :get_team, only: [:show, :edit, :update, :destroy]
 
   def index
     @teams = Team.all
@@ -20,16 +21,13 @@ class TeamsController < ApplicationController
   end
 
   def show
-    @team = Team.find_by_id(params[:id])
     @superheroes = @team.superheroes
   end
 
   def edit
-    @team = Team.find_by_id(params[:id])
   end
 
   def update
-    @team = Team.find_by_id(params[:id])
     if @team.update(team_params)
       flash[:success] = 'Team Updated'
       redirect_to @team
@@ -40,7 +38,7 @@ class TeamsController < ApplicationController
   end
 
   def destroy
-    @team = Team.find_by_id(params[:id]).destroy
+    @team.destroy
     redirect_to teams_path
   end
 
@@ -48,6 +46,10 @@ class TeamsController < ApplicationController
 
   def team_params
     params.require(:team).permit(:name,:publisher)
+  end
+
+  def get_team
+    @team = Team.find_by_id(params[:id])
   end
 
 end

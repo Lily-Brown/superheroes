@@ -11,6 +11,7 @@ class SuperheroesController < ApplicationController
   end
 
   def create
+    @superhero = @superhero
     @superhero = @team.superheroes.update(superhero_params)
     if @superhero.save
       flash[:success] = 'Superhero Created'
@@ -45,7 +46,7 @@ class SuperheroesController < ApplicationController
   private
 
   def superhero_params
-    params.require(:superhero).permit(:name,:true_identity)
+    params.require(:superhero).permit(:name,:true_identity,:image_url)
   end
 
   def get_team
