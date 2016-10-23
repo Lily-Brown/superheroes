@@ -3,6 +3,10 @@ class SuperpowersController < ApplicationController
 
   def index
     @superpowers = Superpower.all
+    current_hero = session[:current_hero]
+    @superhero = Superhero.find_by_id(current_hero['id'])
+    team_id = current_hero['team_id']
+    @team = Team.find_by_id(team_id)
   end
 
   def new 
@@ -51,4 +55,5 @@ class SuperpowersController < ApplicationController
   def get_superpower
     @superpower = Superpower.find_by_id(params[:id])
   end
+  
 end

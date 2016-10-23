@@ -10,10 +10,14 @@
     <% @superpowers.each do |superpower| %>
     <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
     <p><strong>Description</strong>: <%= superpower.description %></p>
+    <p><%= button_to 'Remove from Superhero', destroy_superhero_superpowers_path(@team,@superhero,superpower), method: :delete %></p>
     <% end %>
   <% end %>
 </div>
 <div>
-  <%= button_to 'EDIT', edit_team_superhero_path, method: :get %>
-  <%= button_to 'DELETE', team_superhero_path(@team, @superhero), method: :delete, data: {confirm: "Are you sure you want to delete this Superhero?"} %>
+  <p><%= link_to 'Browse Superpowers to Add', superpowers_path %></p>
+</div>
+<div>
+  <p><%= button_to 'EDIT', edit_team_superhero_path, method: :get %></p>
+  <p><%= button_to 'DELETE', team_superhero_path(@team, @superhero), method: :delete, data: {confirm: "Are you sure you want to delete this Superhero?"} %></p>
 </div>

@@ -24,6 +24,7 @@ class SuperheroesController < ApplicationController
 
   def show
     @superpowers = @superhero.superpowers
+    session[:current_hero] = @superhero
   end
 
   def edit 

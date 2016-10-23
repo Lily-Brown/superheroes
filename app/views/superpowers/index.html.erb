@@ -1,10 +1,14 @@
 <div>
+  <h2>Choose Power to add to <%= @superhero['name'] %></h2>
+</div>
+<div>
   <% @superpowers.each do |superpower| %>
   <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
   <p><strong>Description</strong>: <%= superpower.description %></p>
+  <p><%= button_to 'Add to Superhero', superhero_superpowers_path(@team,@superhero,superpower), method: :post %></p>
   <% end %>
 </div>
 
 <div>
-  <%= link_to 'Add New Superpower', new_superpower_path %>
+  <p><%= link_to 'Add New Superpower', new_superpower_path %></p>
 </div>
