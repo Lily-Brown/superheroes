@@ -2,7 +2,7 @@ class SuperpowersController < ApplicationController
   before_action :get_superpower, only: [:show, :edit, :update, :destroy]
 
   def index
-    @superpowers = Superpower.all.order(:name)
+    @superpowers = Superpower.search(params[:search])
     current_hero = session[:current_hero]
     @superhero = Superhero.find_by_id(current_hero['id'])
     team_id = current_hero['team_id']
@@ -14,6 +14,8 @@ class SuperpowersController < ApplicationController
   end
 
   def create
+    @superpower = @superpower
+    # explode
     @superpower = Superpower.new(superpower_params)
     if @superpower.save
       flash[:success] = 'New Superpower Created!'
@@ -44,6 +46,10 @@ class SuperpowersController < ApplicationController
   def destroy
     @superpower.destroy
     redirect_to superpowers_path
+  end
+
+  def clear
+    explode
   end
 
   private

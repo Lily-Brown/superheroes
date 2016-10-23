@@ -1,9 +1,19 @@
-<div>
-  <%= form_for @superpower do |f| %>
-    <p>Name</p>
-    <p><%= f.text_field :name %></p>
-    <p>Description</p>
-    <p><%= f.text_field :description %></p>
-    <p><%= f.submit 'SAVE' %></p>
-  <% end %>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><h2>ADD A NEW SUPERPOWER</h2></p>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+    </br> 
+    <%= form_for @superpower do |f| %>
+      <p>Name:</p> 
+      <p><%= f.text_field :name %></p>
+      <p>Description:</p> 
+      <p><%= f.text_field :description %></p>
+      <%= f.submit 'SAVE', class: 'button' %></p>
+    <% end %>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+  <p></br><%= link_to 'BACK TO SUPERPOWERS', superpowers_path %></p>
+</div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <hr>
 </div>

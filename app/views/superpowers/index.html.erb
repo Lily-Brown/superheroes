@@ -1,14 +1,33 @@
-<div>
-  <h2>Choose Power to add to <%= @superhero.name %></h2>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <h2>SUPERPOWERS</h2>
 </div>
-<div>
-  <% @superpowers.each do |superpower| %>
-  <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
-  <p><strong>Description</strong>: <%= superpower.description %></p>
-  <p><%= button_to 'Add to '+@superhero.name, superhero_superpowers_path(@team,@superhero,superpower), method: :post %></p>
+
+<div class='col-md-8 col-md-offset-2'>
+  <h2>CHOOSE A POWER TO ADD TO <%= @superhero.name.upcase %></h2>
+</div>
+
+<div class='col-md-8 col-md-offset-2'>
+  <%= form_tag superpowers_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
   <% end %>
 </div>
 
-<div>
-  <p><%= link_to 'Add New Superpower', new_superpower_path %></p>
+<div class='col-md-8 col-md-offset-2'>
+  <% @superpowers.each do |superpower| %>
+  <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
+  <p><strong>Description</strong>: <%= superpower.description %></p>
+  <p><%= button_to 'ADD TO '+@superhero.name.upcase, superhero_superpowers_path(@team,@superhero,superpower), 
+          method: :post %></p>
+  <% end %>
+</div>
+
+<div class='col-md-8 col-md-offset-2'>
+  <p></br><%= link_to 'CREATE A NEW SUPERPOWER', new_superpower_path %></p>
+</div>
+
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <hr>
 </div>

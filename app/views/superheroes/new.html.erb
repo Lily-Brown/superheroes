@@ -1,11 +1,23 @@
-<div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><h2>ADD A NEW SUPERHERO</h2></p>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+  </br>
   <%= form_for @superhero, :as => :superhero, :url => team_superhero_path(@team,@superhero) do |f| %>
-    <p>Name</p>
+    <p>Name:</p> 
     <p><%= f.text_field :name %></p>
     <p>True Identity</p>
     <p><%= f.text_field :true_identity %></p>
     <p>Image URL</p>
     <p><%= f.text_field :image_url %></p>
-    <p><%= f.submit 'SAVE' %></p>
+    <%= f.submit 'SAVE', class: 'button' %></p>
   <% end %>
+</div>
+
+<div class='col-md-8 col-md-offset-2'>
+  <p></br><%= link_to 'BACK TO '+@team.name.upcase, team_path(@team) %></p>
+</div>
+
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <hr>
 </div>

@@ -1,9 +1,22 @@
-<div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><h2>ADD A NEW TEAM</h2></p>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+  </br> 
   <%= form_for @team do |f| %>
-    <p>Name</p>
+    <p>Name:</p> 
     <p><%= f.text_field :name %></p>
-    <p>Publisher</p>
+    <p>Publisher:</p> 
     <p><%= f.text_field :publisher %></p>
-    <p><%= f.submit 'SAVE' %></p>
-  <% end %>
+    <%= f.submit 'SAVE', class: 'button' %></p>
+  <% end %>    
+</div>
+
+<div class='col-md-8 col-md-offset-2'>
+  <p></br><%= link_to 'BACK TO TEAMS', teams_path %></p>
+</div>
+
+</div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <hr>
 </div>

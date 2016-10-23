@@ -1,23 +1,34 @@
-<div>
-  <p><h2><%= @superhero.name %></h2></p>
-    <p><%= image_tag(@superhero.image_url) %></p>
-    <p><strong>True Identity</strong>: <%= @superhero.true_identity %></p>
-    <p><strong>Team</strong>: <%= link_to @team.name, team_path(@team) %></p>
-</div>
-<div>
-  <% if @superpowers.count > 0 %>
-    <p><h2>Superpowers:</h2></p>
-    <% @superpowers.each do |superpower| %>
-    <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
-    <p><strong>Description</strong>: <%= superpower.description %></p>
-    <p><%= button_to 'Remove from Superhero', destroy_superhero_superpowers_path(@team,@superhero,superpower), method: :delete %></p>
-    <% end %>
-  <% end %>
-</div>
-<div>
-  <p><%= link_to 'Browse Superpowers to Add', superpowers_path %></p>
-</div>
-<div>
-  <p><%= button_to 'EDIT', edit_team_superhero_path, method: :get %></p>
-  <p><%= button_to 'DELETE', team_superhero_path(@team, @superhero), method: :delete, data: {confirm: "Are you sure you want to delete this Superhero?"} %></p>
-</div>
+  <div class='col-md-8 col-md-offset-2 sub-header'>
+    <p><h2><%= @superhero.name.upcase %></h2></p>
+      <p><strong>True Identity</strong>: <%= @superhero.true_identity %></p>
+      <p><strong>Team</strong>: <%= link_to @team.name, team_path(@team) %></p>
+  </div>
+
+  <div class='col-md-8 col-md-offset-2'>
+    <div class='row'>
+
+      <div class='col-md-8'>
+        <% if @superpowers.count > 0 %>
+          <p><h2>SUPERPOWERS:</h2></p>
+          <% @superpowers.each do |superpower| %>
+          <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
+          <p><strong>Description</strong>: <%= superpower.description %></p>
+          <p><%= button_to 'Remove from '+ @superhero.name, destroy_superhero_superpowers_path(@team,@superhero,superpower), method: :delete %></p>
+          <% end %>
+        <% end %>
+        <p></br><%= link_to 'BROWSE SUPERPOWRS TO ADD', superpowers_path %></p>
+      </div>
+
+      <div class='col-md-4 superhero-show'>
+        <p><%= image_tag(@superhero.image_url) %></p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class='col-md-8 col-md-offset-2 sub-header'  >
+    <p><%= button_to 'EDIT', edit_team_superhero_path, method: :get, class: 'button' %></p>
+    <p><%= button_to 'DELETE', team_superhero_path(@team, @superhero), method: :delete, 
+          data: {confirm: "Are you sure you want to delete this Superhero?"}, 
+          class: 'button' %></p>
+  </div>

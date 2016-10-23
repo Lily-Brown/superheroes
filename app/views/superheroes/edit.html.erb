@@ -1,11 +1,24 @@
-<div>
-  <%= form_for @superhero, :as => :superhero, :url => team_superhero_path do |f| %>
-    <p>Name</p>
-    <p><%= f.text_field :name %></p>
-    <p>True Identity</p>
-    <p><%= f.text_field :true_identity %></p>
-    <p>Image URL</p>
-    <p><%= f.text_field :image_url %></p>
-    <p><%= f.submit 'SAVE' %></p>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><h2>UPDATE SUPERHERO</h2></p>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+  <div class='row'>
+    <div class='col-md-2'>
+    </br> 
+    <%= form_for @superhero, :as => :superhero, :url => team_superhero_path do |f| %>
+      <p>Name:</p> 
+      <p>True Identity:</p> 
+      <p>Image URL</p>
+    </div>
+    <div class='col-md-2'>
+    </br> 
+      <p><%= f.text_field :name %></p>
+      <p><%= f.text_field :true_identity %></p>
+      <p><%= f.text_field :image_url %></p>
+    </div>  
+  </div>
+</div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+    <p><%= f.submit 'SAVE', class: 'button' %></p>
   <% end %>
 </div>

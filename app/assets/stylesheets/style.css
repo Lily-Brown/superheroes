@@ -1,1 +1,56 @@
+/*PAGE TEMPLATE*/
 
+body {
+  font-family: 'Fredericka the Great', cursive;
+}
+.container {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.header {
+  background-image: url('http://data.whicdn.com/images/133911725/original.jpg');
+  text-align: center;
+  padding: 2%;
+}
+
+.header a, .team-row {
+  color: white;
+  text-shadow: 4px 4px 0px #000,
+              -4px -4px 0px #000,
+              -4px 4px 0px #000,
+              4px -4px 0px #000,
+              4px 0 0px #000,
+              -4px 0 0px #000,
+              0 4px 0px #000,
+              0 -4px 0px #000;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #6E7677;
+}
+
+.sub-header {
+  background: black;
+  text-align: center;
+  padding: 2%;
+  color: white;
+}
+
+.button {
+  color: black;
+}
+
+.superhero-image img {
+  max-height: 20vh; 
+}
+
+.superhero-info, .add-to {
+  padding-top: 2%;
+}
+
+.superhero-show img {
+  max-height: 50vh;
+  padding-top: 5%;
+}

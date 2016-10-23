@@ -1,16 +1,29 @@
-<div>
-  <p><h2><%= @team.name %></h2></p>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><h2><%= @team.name.upcase %></h2></p>
   <p><strong>Publisher</strong>: <%= @team.publisher %></p>
 </div>
-<div>
+
+<div class='col-md-8 col-md-offset-2'>
+  <p><h2>TEAM MEMBERS:</h2></p>
   <% @superheroes.each do |superhero| %>
-  <p><h3><%= link_to superhero.name, team_superhero_path(@team,superhero) %></h3></p>
-  <!-- <p><%#= image_tag(superhero.image_url) %></p> -->
-  <p><strong>True Identity</strong>: <%= superhero.true_identity %></p>
+  <div class='row'>
+    <div class='col-md-2 superhero-image'>
+      <p><%= link_to image_tag(superhero.image_url), team_superhero_path(@team,superhero) %> </p>
+    </div>
+    <div class='col-md-10 superhero-info'>
+      <p><h3><%= link_to superhero.name, team_superhero_path(@team,superhero) %></h3></p>
+      <p><strong>True Identity</strong>: <%= superhero.true_identity %></p>
+    </div>
+  </div>
   <% end %>
 </div>
-<div
-  <p><%= link_to 'Add New Superhero', new_team_superhero_path(@team) %></p>
-  <%= button_to 'EDIT', edit_team_path, method: :get %>
-  <%= button_to 'DELETE', team_path(@team), method: :delete, data: {confirm: "Are you sure you want to delete this Team?"} %>
+
+<div class='col-md-8 col-md-offset-2'>
+  <p><%= link_to 'CREATE A NEW SUPERHERO', new_team_superhero_path(@team) %></p>
+</div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><%= button_to 'EDIT', edit_team_path, method: :get, class: 'button' %></p>
+  <p><%= button_to 'DELETE', team_path(@team), method: :delete, 
+        data: {confirm: 'Are you sure you want to delete this Team?'}, 
+        class: 'button' %></p>
 </div>

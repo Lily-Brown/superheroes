@@ -1,9 +1,22 @@
-<div>
-  <%= form_for @team do |f| %>
-    <p>Name</p>
-    <p><%= f.text_field :name %></p>
-    <p>Publisher</p>
-    <p><%= f.text_field :publisher %></p>
-    <p><%= f.submit 'SAVE' %></p>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <p><h2>UPDATE TEAM</h2></p>
+</div>
+<div class='col-md-8 col-md-offset-2'>
+  <div class='row'>
+    <div class='col-md-2'>
+    </br> 
+    <%= form_for @team do |f| %>
+      <p>Name:</p> 
+      <p>Publisher:</p> 
+    </div>
+    <div class='col-md-2'>
+    </br> 
+      <p><%= f.text_field :name %></p>
+      <p><%= f.text_field :publisher %></p>
+    </div>  
+  </div>
+</div>
+<div class='col-md-8 col-md-offset-2 sub-header'>
+    <p><%= f.submit 'SAVE', class: 'button' %></p>
   <% end %>
 </div>
