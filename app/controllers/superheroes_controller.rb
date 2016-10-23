@@ -27,12 +27,10 @@ class SuperheroesController < ApplicationController
   end
 
   def edit
-    explode
   end
 
   def update
     if @superhero.update(superhero_params)
-      explode
       flash[:success] = 'Superhero Updated'
       redirect_to team_superhero_path
     else
