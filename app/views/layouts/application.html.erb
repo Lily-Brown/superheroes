@@ -14,14 +14,22 @@
       <h1><%= link_to 'SUPERHEROES, ASSEMBLE!', root_path %></h1>
       <hr>
     </div>
-    <div class='col-md-8 col-md-offset-2'>
-      <% flash.each do |name, msg| %>
-      <p>
-      <small> <%= name.capitalize %>: <%= msg %> </small>
-      </p>
+
+    <% flash.each do |name, msg| %>
+      <% if name == 'success' %>
+        <div class='col-md-8 col-md-offset-2 flash-success'> 
+          </br>
+          <p><strong><%= name.upcase %></strong>: <%= msg %></p>
+<!--           </br>  -->
+        </div>
+      <% else %>
+        <div class='col-md-8 col-md-offset-2 flash-error'> 
+          </br>
+          <p><strong><%= name.upcase %></strong>: <%= msg %></p>
+          <!-- </br>  -->
+        </div>
       <% end %>
-    </div>
-      
+     <% end %> 
     <%= yield %>
 
     <div class='col-md-8 col-md-offset-2 header'>
