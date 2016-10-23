@@ -2,6 +2,14 @@
   <p><h2><%= @superpower.name %></h2></p>
   <p><strong>Description</strong>: <%= @superpower.description %></p>
 </div>
+<div>
+  <% if @superheroes.count > 0 %>
+    <p><h2>Superheroes that have this power:</h2></p>
+    <% @superheroes.each do |superhero| %>
+      <p><h3><%= superhero.name%></h3></p>
+    <% end %>
+  <% end %>
+</div>
 <div
   <p><%= link_to 'Add New Superpower', new_superpower_path(@superpower) %></p>
   <%= button_to 'EDIT', edit_superpower_path, method: :get %>

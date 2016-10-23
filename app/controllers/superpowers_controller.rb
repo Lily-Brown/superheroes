@@ -21,6 +21,7 @@ class SuperpowersController < ApplicationController
   end
 
   def show
+    @superheroes = @superpower.superheroes
   end
 
   def edit
