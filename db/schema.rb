@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20161023171917) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "superhero_superpowers", force: :cascade do |t|
     t.integer  "superhero_id"
     t.integer  "superpower_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.index ["superhero_id"], name: "index_superhero_superpowers_on_superhero_id"
-    t.index ["superpower_id"], name: "index_superhero_superpowers_on_superpower_id"
+    t.index ["superhero_id"], name: "index_superhero_superpowers_on_superhero_id", using: :btree
+    t.index ["superpower_id"], name: "index_superhero_superpowers_on_superpower_id", using: :btree
   end
 
   create_table "superheroes", force: :cascade do |t|
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161023171917) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "image_url"
-    t.index ["team_id"], name: "index_superheroes_on_team_id"
+    t.index ["team_id"], name: "index_superheroes_on_team_id", using: :btree
   end
 
   create_table "superpowers", force: :cascade do |t|
@@ -45,4 +48,7 @@ ActiveRecord::Schema.define(version: 20161023171917) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "superhero_superpowers", "superheroes"
+  add_foreign_key "superhero_superpowers", "superpowers"
+  add_foreign_key "superheroes", "teams"
 end

@@ -3,8 +3,7 @@
 </div>
 <div class='col-md-8 col-md-offset-2'>
   </br>
-  <%#= form_for Superhero.new, :as => :superhero, :url => team_superhero_path(@team,@superhero) do |f| %>
-  <%= form_for [@team,@superhero] do |f| %>
+    <%= form_for [@team,@superhero] do |f| %>
     <p>Name:</p> 
     <p><%= f.text_field :name %></p>
     <p>True Identity</p>

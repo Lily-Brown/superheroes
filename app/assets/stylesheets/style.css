@@ -1,5 +1,3 @@
-/*PAGE TEMPLATE*/
-
 body {
   font-family: 'Fredericka the Great', cursive;
 }
@@ -53,4 +51,20 @@ body {
 .superhero-show img {
   max-height: 50vh;
   padding-top: 5%;
+}
+
+.flash-success, .flash-error {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.flash-success {
+  background-color: #7EFF78;
+  color: green;
+}
+
+.flash-error {
+  background-color: #FF939E;
+  color: red;
+
 }
