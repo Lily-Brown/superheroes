@@ -7,15 +7,14 @@ class SuperheroesController < ApplicationController
   end
 
   def new
-    @superhero = @team.superheroes.create(team_id: params[:team_id])
+    @superhero = @team.superheroes.build
   end
 
   def create
-    @superhero = @superhero
-    @superhero = @team.superheroes.update(superhero_params)
+    @superhero = @team.superheroes.new(superhero_params)
     if @superhero.save
       flash[:success] = 'Superhero Created'
-      redirect_to @superhero
+      redirect_to team_superhero_path(@team,@superhero)
     else
       flash[:error] = @superhero.errors.full_messages.join(' ')
       render :new

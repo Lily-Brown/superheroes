@@ -14,8 +14,6 @@ class SuperpowersController < ApplicationController
   end
 
   def create
-    @superpower = @superpower
-    # explode
     @superpower = Superpower.new(superpower_params)
     if @superpower.save
       flash[:success] = 'New Superpower Created!'
