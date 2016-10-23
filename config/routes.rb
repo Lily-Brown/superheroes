@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'teams#index'
 
   resources :teams do
-    resources :superheroes
+    resources :superheroes, :except => [:index]
   end
 
+  resources :superpowers
+  
 end
