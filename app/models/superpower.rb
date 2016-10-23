@@ -1,6 +1,7 @@
 class Superpower < ApplicationRecord
   has_many :superhero_superpowers, dependent: :destroy
   has_many :superheroes, through: :superhero_superpowers
+  validates :name, :description, presence: true
   after_initialize :set_defaults, unless: :persisted?
 
   def set_defaults

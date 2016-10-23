@@ -10,6 +10,12 @@
     <% end %>
   <% end %>
 </div>
+
+<div class='col-md-8 col-md-offset-2'>
+  <p><%= button_to 'ADD TO '+@superhero.name.upcase, superhero_superpowers_path(@team,@superhero,@superpower), 
+          method: :post %></p>
+</div>
+
 <div class='col-md-8 col-md-offset-2'>
   <p></br><%= link_to 'BACK TO SUPERPOWERS', superpowers_path %></p>
 </div>

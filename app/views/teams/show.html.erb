@@ -4,6 +4,11 @@
 </div>
 
 <div class='col-md-8 col-md-offset-2'>
+
+  <div>
+    </br><p><%= link_to 'CREATE A NEW SUPERHERO', new_team_superhero_path(@team) %></p>
+  </div>
+
   <p><h2>TEAM MEMBERS:</h2></p>
   <% @superheroes.each do |superhero| %>
   <div class='row'>
@@ -18,9 +23,6 @@
   <% end %>
 </div>
 
-<div class='col-md-8 col-md-offset-2'>
-  <p><%= link_to 'CREATE A NEW SUPERHERO', new_team_superhero_path(@team) %></p>
-</div>
 <div class='col-md-8 col-md-offset-2 sub-header'>
   <p><%= button_to 'EDIT', edit_team_path, method: :get, class: 'button' %></p>
   <p><%= button_to 'DELETE', team_path(@team), method: :delete, 

@@ -1,12 +1,23 @@
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <hr>
+</div>
+
 <div class='col-md-8 col-md-offset-2'>
+
   <div>
+    <p></br><%= link_to 'CREATE A NEW TEAM', new_team_path %></p>
+  </div>
+
+  <div>
+    <p><h2>SUPERHERO TEAMS:</h2></p>
     <% @teams.each do |team| %>
     <p><h2><%= link_to team.name, team_path(team) %></h2></p>
     <p><strong>Publisher</strong>: <%= team.publisher %></p>
     <% end %>
   </div>
 
-  <div>
-    <p></br><%= link_to 'CREATE A NEW TEAM', new_team_path %></p>
-  </div>
+</div>
+
+<div class='col-md-8 col-md-offset-2 sub-header'>
+  <hr>
 </div>

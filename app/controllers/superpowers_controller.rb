@@ -1,12 +1,9 @@
 class SuperpowersController < ApplicationController
   before_action :get_superpower, only: [:show, :edit, :update, :destroy]
+  before_action :get_team_superhero, only: [:index, :show]
 
   def index
     @superpowers = Superpower.search(params[:search])
-    current_hero = session[:current_hero]
-    @superhero = Superhero.find_by_id(current_hero['id'])
-    team_id = current_hero['team_id']
-    @team = Team.find_by_id(team_id)
   end
 
   def new 
@@ -58,6 +55,15 @@ class SuperpowersController < ApplicationController
 
   def get_superpower
     @superpower = Superpower.find_by_id(params[:id])
+  end
+
+  private
+
+  def get_team_superhero
+    current_hero = session[:current_hero]
+    @superhero = Superhero.find_by_id(current_hero['id'])
+    team_id = current_hero['team_id']
+    @team = Team.find_by_id(team_id)
   end
 
 end
