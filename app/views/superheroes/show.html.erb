@@ -5,9 +5,12 @@
     <p><strong>Team</strong>: <%= link_to @team.name, team_path(@team) %></p>
 </div>
 <div>
-  <% @superpowers.each do |superpower| %>
-  <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
-  <p><strong>Description</strong>: <%= superpower.description %></p>
+  <% if @superpowers.count > 0 %>
+    <p><h2>Superpowers:</h2></p>
+    <% @superpowers.each do |superpower| %>
+    <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
+    <p><strong>Description</strong>: <%= superpower.description %></p>
+    <% end %>
   <% end %>
 </div>
 <div>
