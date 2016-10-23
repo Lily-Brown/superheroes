@@ -1,0 +1,19 @@
+<div>
+  <p><h2><%= @superpower.name %></h2></p>
+  <p><strong>Description</strong>: <%= @superpower.description %></p>
+</div>
+<div>
+  <% if @superheroes.count > 0 %>
+    <p><h2>Superheroes that have this power:</h2></p>
+    <% @superheroes.each do |superhero| %>
+      <p><h3><%= link_to superhero.name, team_superhero_path(superhero.team, superhero) %></h3></p>
+    <% end %>
+  <% end %>
+</div>
+<div>
+  <%= button_to 'EDIT', edit_superpower_path, method: :get %>
+  <%= button_to 'DELETE', superpower_path(@superpower), method: :delete, data: {confirm: "Are you sure you want to delete this Superpower?"} %>
+</div>
+<div>
+  <%= link_to 'Back to Superpowers', superpowers_path %>
+</div>

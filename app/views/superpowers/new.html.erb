@@ -1,0 +1,9 @@
+<div>
+  <%= form_for @superpower do |f| %>
+    <p>Name</p>
+    <p><%= f.text_field :name %></p>
+    <p>Description</p>
+    <p><%= f.text_field :description %></p>
+    <p><%= f.submit 'SAVE' %></p>
+  <% end %>
+</div>

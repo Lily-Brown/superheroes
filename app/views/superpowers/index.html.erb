@@ -1,0 +1,10 @@
+<div>
+  <% @superpowers.each do |superpower| %>
+  <p><h2><%= link_to superpower.name, superpower_path(superpower) %></h2></p>
+  <p><strong>Description</strong>: <%= superpower.description %></p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to 'Add New Superpower', new_superpower_path %>
+</div>
