@@ -2,7 +2,7 @@ class SuperpowersController < ApplicationController
   before_action :get_superpower, only: [:show, :edit, :update, :destroy]
 
   def index
-    @superpowers = Superpower.all
+    @superpowers = Superpower.all.order(:name)
     current_hero = session[:current_hero]
     @superhero = Superhero.find_by_id(current_hero['id'])
     team_id = current_hero['team_id']
@@ -55,5 +55,5 @@ class SuperpowersController < ApplicationController
   def get_superpower
     @superpower = Superpower.find_by_id(params[:id])
   end
-  
+
 end
