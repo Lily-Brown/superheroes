@@ -21,7 +21,13 @@
     </div>
   </div>
   <% end %>
+
+  <div>
+    </br><p><%= link_to 'BACK TO '+@team.name.upcase, team_path(@team) %></p>
+  </div>
 </div>
+
+
 
 <div class='col-md-8 col-md-offset-2 sub-header'>
   <p><%= button_to 'EDIT', edit_team_path, method: :get, class: 'button' %></p>
