@@ -13,13 +13,23 @@
 - 3 Models, a many-to-many association
 - Deployment
 
-### Installation
+### Deployment
 
-This is a pretty simple project. 
+See this project live on heroku: https://morning-cove-63345.herokuapp.com/
+
+### Installation
 
 1 - Fork and clone this repository.
 
-2 - Open index.html in your browser.
+2 - CD into the project directory.
+
+3 - Install gems: ```> bundle install```
+
+4 - Migrate the database: ```> rake db:migrate```
+
+5 - Run the server: ```> rails s```
+
+6 - Visit: http://localhost:3000/ to see your app live.
 
 ### Screenshots
 Main Page - List of Superhero Teams:
