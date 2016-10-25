@@ -25,11 +25,13 @@ See this project live on heroku: https://morning-cove-63345.herokuapp.com/
 
 3 - Install gems: ```> bundle install```
 
-4 - Migrate the database: ```> rake db:migrate```
+4 - Create the database: ```> rake db:create```
 
-5 - Run the server: ```> rails s```
+5 - Migrate the database: ```> rake db:migrate```
 
-6 - Visit: http://localhost:3000/ to see your app live.
+6 - Run the server: ```> rails s```
+
+7 - Visit: http://localhost:3000/ to see your app live.
 
 ### Screenshots
 Main Page - List of Superhero Teams:
