@@ -2,20 +2,30 @@
 
 ## GA Rails Weekend Project
 
-### Synopsis - GA Project Requirements
+### Synopsis
 
-- Must have 2 models
-- Must have 1 association between models
-- Have complete RESTful routes for at least 1 model
-- Include Error Handling & Validations for all models (try to break it!)
+As per the GA Project requirements, I built a Ruby on Rails applications that has:
 
-**Stretch Goals Accomplished:**
-- 3 Models, a many-to-many association
-- Deployment
+- at least 2 models, 
+- at least 1 association between models, 
+- complete RESTful routes for at least 1 model, and 
+- includes Error Handling & Validations for all models. 
+
+I also accomplished the stretch goals of having: 
+
+- 3 Models with a many-to-many association, and 
+- deployment to Heroku.
 
 ### Deployment
 
-See this project live on heroku: https://morning-cove-63345.herokuapp.com/
+See this project live on Heroku: [https://morning-cove-63345.herokuapp.com/](https://morning-cove-63345.herokuapp.com/)
+
+### Technologies
+
+- Ruby on Rails
+- HTML
+- CSS
+- Bootstrap
 
 ### Installation
 
@@ -34,6 +44,7 @@ See this project live on heroku: https://morning-cove-63345.herokuapp.com/
 7 - Visit: http://localhost:3000/ to see your app live.
 
 ### Screenshots
+
 Main Page - List of Superhero Teams:
 
 <img src='http://i.imgur.com/JYF0mJL.png' height='500px'>
@@ -76,3 +87,7 @@ end
 
 That was a doozy. To see the evolution of my unraveling, see StackOverflow: 
 http://stackoverflow.com/questions/40194139/rails-nested-form-for-errors-actioncontrollerurlgenerationerror
+
+### Future Features
+- Easier Addition of Superpower Flow
+- Updated styling
